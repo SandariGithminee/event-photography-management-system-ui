@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Album - Capturely</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/create-album.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light create-album-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <i class="fas fa-camera me-2 brand-icon"></i>
+                <span class="brand-text">Capturely</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link create-album-nav-link" href="#events">
+                            <i class="fas fa-calendar-check me-1"></i>Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link create-album-nav-link" href="#profile">
+                            <i class="fas fa-user me-1"></i>Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link create-album-nav-link active" href="photographer-albums.html">
+                            <i class="fas fa-images me-1"></i>Albums
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="user-profile-nav">
+                            <img src="https://via.placeholder.com/40x40/0A2540/FFFFFF?text=EC" alt="Emily Carter" class="profile-avatar">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="create-album-page">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6 col-md-8">
+                    <div class="create-album-card">
+                        <!-- Form Header -->
+                        <div class="form-header">
+                            <h2 class="form-title">New Album</h2>
+                        </div>
+
+                        <!-- Create Album Form -->
+                        <form class="create-album-form" id="createAlbumForm" novalidate>
+                            <!-- Album Name Field -->
+                            <div class="form-group mb-4">
+                                <label for="albumName" class="form-label">
+                                    <i class="fas fa-images me-2"></i>Name
+                                </label>
+                                <input type="text" class="form-control album-input" id="albumName" placeholder="Album Name" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid album name.
+                                </div>
+                            </div>
+
+                            <!-- Event Selection Field -->
+                            <div class="form-group mb-4">
+                                <label for="eventSelect" class="form-label">
+                                    <i class="fas fa-calendar-alt me-2"></i>For
+                                </label>
+                                <select class="form-select album-select" id="eventSelect" required>
+                                    <option value="" selected disabled>Select an Event</option>
+                                    <option value="wedding-grand-ballroom">Wedding at the Grand Ballroom - July 15, 2024</option>
+                                    <option value="corporate-event">Corporate Event - August 20, 2024</option>
+                                    <option value="birthday-party">Birthday Party - September 5, 2024</option>
+                                    <option value="graduation-ceremony">Graduation Ceremony - October 10, 2024</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please select an event for this album.
+                                </div>
+                            </div>
+
+                            <!-- Album Cover Image Field -->
+                            <div class="form-group mb-5">
+                                <label for="albumCover" class="form-label">
+                                    <i class="fas fa-image me-2"></i>Album Cover Image
+                                </label>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" class="form-control file-input" id="albumCover" accept="image/*">
+                                    <div class="file-upload-display" id="fileUploadDisplay">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <span class="upload-text">Choose an Image</span>
+                                            <span class="upload-subtext">or drag and drop here</span>
+                                        </div>
+                                        <div class="upload-preview" id="uploadPreview" style="display: none;">
+                                            <img id="previewImage" src="" alt="Preview">
+                                            <button type="button" class="btn btn-remove-image" id="removeImage">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-text">
+                                    <i class="fas fa-info-circle me-1"></i>
+                                    Recommended size: 1200x800px. Max file size: 5MB.
+                                </div>
+                            </div>
+
+                            <!-- Form Actions -->
+                            <div class="form-actions">
+                                <button type="button" class="btn btn-discard" id="discardBtn">
+                                    <i class="fas fa-times me-2"></i>Discard
+                                </button>
+                                <button type="submit" class="btn btn-create" id="createBtn">
+                                    <i class="fas fa-plus me-2"></i>Create
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">
+                        <i class="fas fa-check-circle text-success me-2"></i>
+                        Album Created Successfully
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Your album "<span id="createdAlbumName"></span>" has been created successfully!</p>
+                    <p class="text-muted">You can now start uploading photos to this album.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-list me-1"></i>Back to Albums
+                    </button>
+                    <button type="button" class="btn btn-primary" id="viewAlbumBtn">
+                        <i class="fas fa-eye me-1"></i>View Album
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('createAlbumForm');
+            const fileInput = document.getElementById('albumCover');
+            const fileUploadDisplay = document.getElementById('fileUploadDisplay');
+            const uploadPreview = document.getElementById('uploadPreview');
+            const previewImage = document.getElementById('previewImage');
+            const removeImageBtn = document.getElementById('removeImage');
+            const discardBtn = document.getElementById('discardBtn');
+            const createBtn = document.getElementById('createBtn');
+
+            // File upload handling
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    handleFileUpload(file);
+                }
+            });
+
+            // Drag and drop functionality
+            fileUploadDisplay.addEventListener('dragover', function(e) {
+                e.preventDefault();
+                this.classList.add('drag-over');
+            });
+
+            fileUploadDisplay.addEventListener('dragleave', function(e) {
+                e.preventDefault();
+                this.classList.remove('drag-over');
+            });
+
+            fileUploadDisplay.addEventListener('drop', function(e) {
+                e.preventDefault();
+                this.classList.remove('drag-over');
+                const file = e.dataTransfer.files[0];
+                if (file && file.type.startsWith('image/')) {
+                    fileInput.files = e.dataTransfer.files;
+                    handleFileUpload(file);
+                }
+            });
+
+            // Click to upload
+            fileUploadDisplay.addEventListener('click', function() {
+                if (!uploadPreview.style.display || uploadPreview.style.display === 'none') {
+                    fileInput.click();
+                }
+            });
+
+            function handleFileUpload(file) {
+                if (file.size > 5 * 1024 * 1024) { // 5MB limit
+                    alert('File size must be less than 5MB');
+                    return;
+                }
+
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    document.querySelector('.upload-placeholder').style.display = 'none';
+                    uploadPreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+
+            // Remove image
+            removeImageBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                fileInput.value = '';
+                uploadPreview.style.display = 'none';
+                document.querySelector('.upload-placeholder').style.display = 'flex';
+            });
+
+            // Form validation and submission
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (form.checkValidity()) {
+                    // Show loading state
+                    createBtn.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Creating...';
+                    createBtn.disabled = true;
+                    
+                    // Simulate API call
+                    setTimeout(() => {
+                        const albumName = document.getElementById('albumName').value;
+                        document.getElementById('createdAlbumName').textContent = albumName;
+                        
+                        // Show success modal
+                        const successModal = new bootstrap.Modal(document.getElementById('successModal'));
+                        successModal.show();
+                        
+                        // Reset form
+                        form.reset();
+                        uploadPreview.style.display = 'none';
+                        document.querySelector('.upload-placeholder').style.display = 'flex';
+                        
+                        // Reset button
+                        createBtn.innerHTML = '<i class="fas fa-plus me-2"></i>Create';
+                        createBtn.disabled = false;
+                        
+                        // Remove validation classes
+                        form.classList.remove('was-validated');
+                    }, 2000);
+                }
+                
+                form.classList.add('was-validated');
+            });
+
+            // Discard button
+            discardBtn.addEventListener('click', function() {
+                if (confirm('Are you sure you want to discard this album? All entered data will be lost.')) {
+                    // Reset form
+                    form.reset();
+                    form.classList.remove('was-validated');
+                    uploadPreview.style.display = 'none';
+                    document.querySelector('.upload-placeholder').style.display = 'flex';
+                    
+                    // Redirect back to albums page
+                    window.location.href = 'photographer-albums.html';
+                }
+            });
+
+            // Success modal actions
+            document.getElementById('viewAlbumBtn').addEventListener('click', function() {
+                // Redirect to album details page
+                window.location.href = 'album-details.html';
+            });
+
+            // Modal close action
+            document.getElementById('successModal').addEventListener('hidden.bs.modal', function() {
+                // Redirect back to albums page
+                window.location.href = 'photographer-albums.html';
+            });
+
+            // Navigation links
+            document.querySelectorAll('.create-album-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all links
+                        document.querySelectorAll('.create-album-nav-link').forEach(l => l.classList.remove('active'));
+                        
+                        // Add active class to clicked link
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

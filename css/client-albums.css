@@ -1,0 +1,398 @@
+/* Client Albums Page Styling using Bootstrap 5 and Custom Variables */
+
+.client-albums-page {
+    background-color: var(--secondary-light-gray);
+    min-height: 100vh;
+}
+
+/* Navigation Styling */
+.client-navbar {
+    background-color: var(--secondary-white) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e8ecef;
+}
+
+.brand-icon {
+    color: var(--primary-deep-blue);
+    font-size: 1.2rem;
+}
+
+.brand-text {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.client-nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+}
+
+.client-nav-link:hover {
+    color: var(--primary-deep-blue) !important;
+    background-color: rgba(10, 37, 64, 0.1);
+}
+
+.client-nav-link.active {
+    color: var(--primary-deep-blue) !important;
+    background-color: rgba(10, 37, 64, 0.15);
+    font-weight: 600;
+}
+
+.book-event-btn {
+    background-color: var(--primary-deep-blue);
+    border-color: var(--primary-deep-blue);
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.book-event-btn:hover {
+    background-color: #07305d;
+    border-color: #07305d;
+    transform: translateY(-1px);
+}
+
+.logout-btn {
+    background-color: var(--secondary-charcoal-gray);
+    border-color: var(--secondary-charcoal-gray);
+    border-radius: 6px;
+    padding: 8px 20px;
+    color: var(--secondary-white);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    color: var(--secondary-white);
+}
+
+/* Page Header */
+.albums-header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+/* Albums Grid */
+.albums-grid {
+    margin-bottom: 3rem;
+}
+
+/* Album Card Styling */
+.album-card {
+    background-color: var(--secondary-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-card:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+.album-image-container {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.album-image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--primary-deep-blue), #07305d);
+}
+
+.album-icon {
+    font-size: 3rem;
+    color: var(--secondary-white);
+    opacity: 0.9;
+}
+
+/* Different album type backgrounds */
+.wedding-album {
+    background: linear-gradient(135deg, #2C2C2C, #0A2540);
+}
+
+.graduation-album {
+    background: linear-gradient(135deg, #8FBC8F, #6B8E23);
+}
+
+.family-album {
+    background: linear-gradient(135deg, #F5DEB3, #DEB887);
+}
+
+.corporate-album {
+    background: linear-gradient(135deg, #2C2C2C, #1C1C1C);
+}
+
+.gala-album {
+    background: linear-gradient(135deg, #1A1A1A, #000000);
+}
+
+.festival-album {
+    background: linear-gradient(135deg, #F5DEB3, #D2B48C);
+}
+
+.picnic-album {
+    background: linear-gradient(135deg, #90EE90, #32CD32);
+}
+
+.art-album {
+    background: linear-gradient(135deg, #D3D3D3, #A9A9A9);
+}
+
+/* Album Status Badge */
+.album-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    backdrop-filter: blur(10px);
+}
+
+.album-status.unlocked {
+    background-color: rgba(40, 167, 69, 0.9);
+    color: var(--secondary-white);
+}
+
+.album-status.locked-partial {
+    background-color: rgba(230, 57, 70, 0.9);
+    color: var(--secondary-white);
+}
+
+.album-status i {
+    font-size: 0.7rem;
+}
+
+/* Album Info */
+.album-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.album-title {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
+}
+
+.album-date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+/* Album Actions */
+.album-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+}
+
+.album-actions .btn {
+    flex: 1;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.album-actions .btn-primary {
+    background-color: var(--primary-deep-blue);
+    border-color: var(--primary-deep-blue);
+}
+
+.album-actions .btn-primary:hover {
+    background-color: #07305d;
+    border-color: #07305d;
+    transform: translateY(-1px);
+}
+
+.album-actions .btn-outline-primary {
+    color: var(--primary-deep-blue);
+    border-color: var(--primary-deep-blue);
+}
+
+.album-actions .btn-outline-primary:hover {
+    background-color: var(--primary-deep-blue);
+    border-color: var(--primary-deep-blue);
+    color: var(--secondary-white);
+}
+
+.album-actions .btn-warning {
+    background-color: var(--interactive-warning-orange);
+    border-color: var(--interactive-warning-orange);
+    color: var(--secondary-white);
+}
+
+.album-actions .btn-warning:hover {
+    background-color: #e68900;
+    border-color: #e68900;
+    color: var(--secondary-white);
+}
+
+.album-actions .btn-outline-secondary {
+    color: var(--text-muted);
+    border-color: #dee2e6;
+}
+
+.album-actions .btn-outline-secondary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .albums-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .client-nav-link {
+        margin: 4px 0;
+    }
+    
+    .book-event-btn,
+    .logout-btn {
+        margin: 4px 0 !important;
+        width: 100%;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .album-image-container {
+        height: 160px;
+    }
+    
+    .album-icon {
+        font-size: 2.5rem;
+    }
+    
+    .album-info {
+        padding: 1rem;
+    }
+    
+    .album-actions {
+        flex-direction: column;
+    }
+    
+    .page-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .album-card {
+        margin-bottom: 1rem;
+    }
+    
+    .brand-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* Loading States */
+.album-card.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.album-card.loading .album-image {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Hover Effects */
+.album-card:hover .album-icon {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+.album-status {
+    transition: all 0.3s ease;
+}
+
+.album-card:hover .album-status {
+    transform: scale(1.05);
+}
+
+/* Focus States for Accessibility */
+.album-card:focus,
+.album-actions .btn:focus {
+    outline: 2px solid var(--primary-deep-blue);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .client-navbar,
+    .album-actions {
+        display: none;
+    }
+    
+    .album-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}

@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Management - Capturely</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/album-management.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light album-management-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <i class="fas fa-camera me-2 brand-icon"></i>
+                <span class="brand-text">Capturely</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link management-nav-link" href="#events">
+                            <i class="fas fa-calendar-check me-1"></i>Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link management-nav-link" href="#profile">
+                            <i class="fas fa-user me-1"></i>Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link management-nav-link active" href="photographer-albums.html">
+                            <i class="fas fa-images me-1"></i>Albums
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="user-profile-nav">
+                            <img src="https://via.placeholder.com/40x40/0A2540/FFFFFF?text=EC" alt="Emily Carter" class="profile-avatar">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="album-management-page">
+        <div class="container-fluid py-4">
+            <div class="row">
+                <!-- Left Sidebar - Album Details -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="album-details-sidebar">
+                        <!-- Back Navigation -->
+                        <div class="back-navigation">
+                            <button class="btn btn-back" onclick="history.back()">
+                                <i class="fas fa-chevron-left me-2"></i>
+                                Album Details
+                            </button>
+                        </div>
+
+                        <!-- Album Information -->
+                        <div class="album-info-section">
+                            <h3 class="section-title">Album</h3>
+                            
+                            <div class="info-item">
+                                <label class="info-label">Album Name</label>
+                                <input type="text" class="form-control album-name-input" value="Wedding at the Grand Ballroom" id="albumNameInput">
+                            </div>
+
+                            <div class="info-item">
+                                <label class="info-label">Status</label>
+                                <select class="form-select status-select" id="statusSelect">
+                                    <option value="pending" selected>Pending Approval</option>
+                                    <option value="approved">Approved</option>
+                                    <option value="rejected">Rejected</option>
+                                </select>
+                            </div>
+
+                            <div class="info-item">
+                                <label class="info-label">Date</label>
+                                <input type="date" class="form-control date-input" value="2024-07-15" id="dateInput">
+                            </div>
+                        </div>
+
+                        <!-- Update Button -->
+                        <button class="btn btn-update" id="updateAlbumBtn">
+                            <i class="fas fa-save me-2"></i>Update
+                        </button>
+
+                        <!-- Image Upload Section -->
+                        <div class="image-upload-section">
+                            <h3 class="section-title">Image Upload</h3>
+                            
+                            <div class="upload-area">
+                                <h4 class="upload-subtitle">Select Album Images</h4>
+                                <div class="file-upload-wrapper">
+                                    <input type="file" class="form-control file-input" id="albumImages" multiple accept="image/*">
+                                    <div class="file-upload-display" id="fileUploadDisplay">
+                                        <div class="upload-placeholder">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <span class="upload-text">Choose an Image</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-upload" id="uploadBtn">
+                                    <i class="fas fa-upload me-2"></i>Upload
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Photo Gallery -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="photo-gallery-section">
+                        <!-- Gallery Header -->
+                        <div class="gallery-header">
+                            <h2 class="gallery-title">Wedding at the Grand Ballroom</h2>
+                            <div class="gallery-stats">
+                                <span class="photo-count">
+                                    <i class="fas fa-images me-1"></i>
+                                    12 Photos
+                                </span>
+                            </div>
+                        </div>
+
+                        <!-- Photo Grid -->
+                        <div class="photo-grid" id="photoGrid">
+                            <!-- Row 1 -->
+                            <div class="photo-item" data-photo-id="1">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-arch">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="2">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder couple-together">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="3">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-portrait">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="4">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-circle">
+                                        <i class="fas fa-circle"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="5">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-circle-2">
+                                        <i class="fas fa-user-friends"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 2 -->
+                            <div class="photo-item" data-photo-id="6">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder couple-arch">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="7">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-bouquet">
+                                        <i class="fas fa-seedling"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="8">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-flowers">
+                                        <i class="fas fa-leaf"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="9">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder couple-romantic">
+                                        <i class="fas fa-heart"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="10">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder couple-blue">
+                                        <i class="fas fa-walking"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Row 3 -->
+                            <div class="photo-item" data-photo-id="11">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-frame">
+                                        <i class="fas fa-square"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="photo-item" data-photo-id="12">
+                                <div class="photo-container">
+                                    <div class="photo-placeholder bride-bouquet-close">
+                                        <i class="fas fa-flower"></i>
+                                    </div>
+                                    <div class="photo-overlay">
+                                        <div class="photo-actions">
+                                            <button class="btn btn-sm btn-light photo-action" title="View Full Size">
+                                                <i class="fas fa-expand"></i>
+                                            </button>
+                                            <button class="btn btn-sm btn-danger photo-action" title="Delete Photo">
+                                                <i class="fas fa-trash"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const fileInput = document.getElementById('albumImages');
+            const fileUploadDisplay = document.getElementById('fileUploadDisplay');
+            const updateBtn = document.getElementById('updateAlbumBtn');
+            const uploadBtn = document.getElementById('uploadBtn');
+
+            // File upload handling
+            fileInput.addEventListener('change', function(e) {
+                const files = e.target.files;
+                if (files.length > 0) {
+                    updateUploadDisplay(files);
+                }
+            });
+
+            // Click to upload
+            fileUploadDisplay.addEventListener('click', function() {
+                fileInput.click();
+            });
+
+            function updateUploadDisplay(files) {
+                const uploadPlaceholder = document.querySelector('.upload-placeholder');
+                if (files.length === 1) {
+                    uploadPlaceholder.innerHTML = `
+                        <i class="fas fa-image"></i>
+                        <span class="upload-text">${files[0].name}</span>
+                    `;
+                } else {
+                    uploadPlaceholder.innerHTML = `
+                        <i class="fas fa-images"></i>
+                        <span class="upload-text">${files.length} images selected</span>
+                    `;
+                }
+                uploadPlaceholder.style.color = 'var(--primary-deep-blue)';
+            }
+
+            // Update album functionality
+            updateBtn.addEventListener('click', function() {
+                const albumName = document.getElementById('albumNameInput').value;
+                const status = document.getElementById('statusSelect').value;
+                const date = document.getElementById('dateInput').value;
+
+                // Show loading state
+                this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Updating...';
+                this.disabled = true;
+
+                // Simulate API call
+                setTimeout(() => {
+                    // Update gallery title
+                    document.querySelector('.gallery-title').textContent = albumName;
+                    
+                    // Reset button
+                    this.innerHTML = '<i class="fas fa-save me-2"></i>Update';
+                    this.disabled = false;
+                    
+                    // Show success message
+                    alert('Album updated successfully!');
+                }, 1500);
+            });
+
+            // Upload images functionality
+            uploadBtn.addEventListener('click', function() {
+                const files = fileInput.files;
+                if (files.length === 0) {
+                    alert('Please select images to upload');
+                    return;
+                }
+
+                // Show loading state
+                this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Uploading...';
+                this.disabled = true;
+
+                // Simulate upload
+                setTimeout(() => {
+                    // Reset button
+                    this.innerHTML = '<i class="fas fa-upload me-2"></i>Upload';
+                    this.disabled = false;
+                    
+                    // Reset file input
+                    fileInput.value = '';
+                    document.querySelector('.upload-placeholder').innerHTML = `
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span class="upload-text">Choose an Image</span>
+                    `;
+                    document.querySelector('.upload-placeholder').style.color = '';
+                    
+                    // Update photo count
+                    const currentCount = parseInt(document.querySelector('.photo-count').textContent.match(/\d+/)[0]);
+                    const newCount = currentCount + files.length;
+                    document.querySelector('.photo-count').innerHTML = `
+                        <i class="fas fa-images me-1"></i>
+                        ${newCount} Photos
+                    `;
+                    
+                    alert(`${files.length} image(s) uploaded successfully!`);
+                }, 2000);
+            });
+
+            // Photo interactions
+            document.querySelectorAll('.photo-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.querySelector('.photo-overlay').style.opacity = '1';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.querySelector('.photo-overlay').style.opacity = '0';
+                });
+
+                // Photo action buttons
+                const viewBtn = item.querySelector('.photo-action[title="View Full Size"]');
+                const deleteBtn = item.querySelector('.photo-action[title="Delete Photo"]');
+
+                viewBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const photoId = item.getAttribute('data-photo-id');
+                    console.log('View photo:', photoId);
+                    // Here you would open a lightbox or modal
+                });
+
+                deleteBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const photoId = item.getAttribute('data-photo-id');
+                    if (confirm('Are you sure you want to delete this photo?')) {
+                        // Animate removal
+                        item.style.transition = 'opacity 0.3s ease';
+                        item.style.opacity = '0';
+                        
+                        setTimeout(() => {
+                            item.remove();
+                            // Update photo count
+                            const currentCount = parseInt(document.querySelector('.photo-count').textContent.match(/\d+/)[0]);
+                            document.querySelector('.photo-count').innerHTML = `
+                                <i class="fas fa-images me-1"></i>
+                                ${currentCount - 1} Photos
+                            `;
+                        }, 300);
+                    }
+                });
+            });
+
+            // Navigation links
+            document.querySelectorAll('.management-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all links
+                        document.querySelectorAll('.management-nav-link').forEach(l => l.classList.remove('active'));
+                        
+                        // Add active class to clicked link
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

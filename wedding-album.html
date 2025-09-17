@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Album - Capturely</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/wedding-album.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light wedding-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <i class="fas fa-camera me-2 brand-icon"></i>
+                <span class="brand-text">Capturely</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link wedding-nav-link" href="#my-bookings">
+                            <i class="fas fa-calendar-check me-1"></i>My Bookings
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wedding-nav-link active" href="client-albums.html">
+                            <i class="fas fa-images me-1"></i>My Albums
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link wedding-nav-link" href="#reviews">
+                            <i class="fas fa-star me-1"></i>Reviews
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary book-event-btn ms-2" href="packages.html">
+                            <i class="fas fa-plus me-1"></i>Book Event
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-secondary logout-btn ms-2" href="login.html">
+                            <i class="fas fa-sign-out-alt me-1"></i>Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="wedding-album-page">
+        <div class="container py-5">
+            <!-- Album Header -->
+            <div class="album-header">
+                <div class="album-hero-image">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1 class="album-title">Wedding Album</h1>
+                        <p class="album-photographer">By Emily Carter</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Album Actions -->
+            <div class="album-actions-bar">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="album-info">
+                            <span class="photo-count">
+                                <i class="fas fa-images me-1"></i>
+                                125 Photos
+                            </span>
+                            <span class="album-date">
+                                <i class="fas fa-calendar me-1"></i>
+                                July 15, 2024
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <div class="album-actions">
+                            <button class="btn btn-outline-primary me-2" id="selectPhotos">
+                                <i class="fas fa-check-square me-1"></i>Select Photos
+                            </button>
+                            <button class="btn btn-primary" id="downloadAll">
+                                <i class="fas fa-download me-1"></i>Download All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery Grid -->
+            <div class="photo-gallery">
+                <div class="masonry-grid">
+                    <!-- Photo 1 -->
+                    <div class="gallery-item" data-photo-id="1">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-couple-field">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-1">
+                                    <label for="photo-1" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 2 -->
+                    <div class="gallery-item tall" data-photo-id="2">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-field-portrait">
+                                <i class="fas fa-user-friends"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-2">
+                                    <label for="photo-2" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 3 -->
+                    <div class="gallery-item" data-photo-id="3">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-ceremony">
+                                <i class="fas fa-ring"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-3">
+                                    <label for="photo-3" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 4 -->
+                    <div class="gallery-item wide" data-photo-id="4">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-architecture">
+                                <i class="fas fa-building-columns"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-4">
+                                    <label for="photo-4" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 5 -->
+                    <div class="gallery-item" data-photo-id="5">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-bride-portrait">
+                                <i class="fas fa-female"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-5">
+                                    <label for="photo-5" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 6 -->
+                    <div class="gallery-item" data-photo-id="6">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-beach">
+                                <i class="fas fa-water"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-6">
+                                    <label for="photo-6" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 7 -->
+                    <div class="gallery-item tall" data-photo-id="7">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-tree-tunnel">
+                                <i class="fas fa-tree"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-7">
+                                    <label for="photo-7" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 8 -->
+                    <div class="gallery-item" data-photo-id="8">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-beach-walk">
+                                <i class="fas fa-walking"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-8">
+                                    <label for="photo-8" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 9 -->
+                    <div class="gallery-item" data-photo-id="9">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-circle-frame">
+                                <i class="fas fa-circle"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-9">
+                                    <label for="photo-9" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 10 -->
+                    <div class="gallery-item" data-photo-id="10">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-nature">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-10">
+                                    <label for="photo-10" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 11 -->
+                    <div class="gallery-item" data-photo-id="11">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-bouquet">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-11">
+                                    <label for="photo-11" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Photo 12 -->
+                    <div class="gallery-item" data-photo-id="12">
+                        <div class="photo-container">
+                            <div class="photo-placeholder wedding-romantic">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="photo-overlay">
+                                <div class="photo-actions">
+                                    <button class="btn btn-sm btn-light photo-action" title="View">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Download">
+                                        <i class="fas fa-download"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-light photo-action" title="Share">
+                                        <i class="fas fa-share"></i>
+                                    </button>
+                                </div>
+                                <div class="photo-select">
+                                    <input type="checkbox" class="photo-checkbox" id="photo-12">
+                                    <label for="photo-12" class="photo-select-label"></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-5">
+                <button class="btn btn-outline-primary btn-lg load-more-btn" id="loadMore">
+                    <i class="fas fa-plus me-2"></i>Load More Photos
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Photo selection functionality
+        let selectMode = false;
+        let selectedPhotos = new Set();
+
+        document.getElementById('selectPhotos').addEventListener('click', function() {
+            selectMode = !selectMode;
+            const button = this;
+            const photoSelects = document.querySelectorAll('.photo-select');
+            
+            if (selectMode) {
+                button.innerHTML = '<i class="fas fa-times me-1"></i>Cancel';
+                button.classList.remove('btn-outline-primary');
+                button.classList.add('btn-outline-danger');
+                photoSelects.forEach(select => select.style.display = 'block');
+            } else {
+                button.innerHTML = '<i class="fas fa-check-square me-1"></i>Select Photos';
+                button.classList.remove('btn-outline-danger');
+                button.classList.add('btn-outline-primary');
+                photoSelects.forEach(select => select.style.display = 'none');
+                selectedPhotos.clear();
+                document.querySelectorAll('.photo-checkbox').forEach(cb => cb.checked = false);
+            }
+        });
+
+        // Handle photo selection
+        document.querySelectorAll('.photo-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const photoId = this.id.split('-')[1];
+                if (this.checked) {
+                    selectedPhotos.add(photoId);
+                } else {
+                    selectedPhotos.delete(photoId);
+                }
+                updateDownloadButton();
+            });
+        });
+
+        function updateDownloadButton() {
+            const downloadBtn = document.getElementById('downloadAll');
+            if (selectedPhotos.size > 0) {
+                downloadBtn.innerHTML = `<i class="fas fa-download me-1"></i>Download ${selectedPhotos.size} Photos`;
+            } else {
+                downloadBtn.innerHTML = '<i class="fas fa-download me-1"></i>Download All';
+            }
+        }
+
+        // Gallery item hover effects
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.querySelector('.photo-overlay').style.opacity = '1';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                if (!selectMode) {
+                    this.querySelector('.photo-overlay').style.opacity = '0';
+                }
+            });
+        });
+
+        // Load more functionality
+        document.getElementById('loadMore').addEventListener('click', function() {
+            // Simulate loading more photos
+            this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Loading...';
+            this.disabled = true;
+            
+            setTimeout(() => {
+                this.innerHTML = '<i class="fas fa-plus me-2"></i>Load More Photos';
+                this.disabled = false;
+                // Here you would typically load more photos from the server
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

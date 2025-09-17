@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Albums - Capturely</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/photographer-albums.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light photographer-navbar">
+        <div class="container">
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="index.html">
+                <i class="fas fa-camera me-2 brand-icon"></i>
+                <span class="brand-text">Capturely</span>
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link photographer-nav-link" href="#events">
+                            <i class="fas fa-calendar-check me-1"></i>Events
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link photographer-nav-link" href="#profile">
+                            <i class="fas fa-user me-1"></i>Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link photographer-nav-link active" href="photographer-albums.html">
+                            <i class="fas fa-images me-1"></i>Albums
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <div class="user-profile-nav">
+                            <img src="https://via.placeholder.com/40x40/0A2540/FFFFFF?text=EC" alt="Emily Carter" class="profile-avatar">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="photographer-albums-page">
+        <div class="container py-5">
+            <!-- Page Header -->
+            <div class="page-header">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <h1 class="page-title">Albums</h1>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <button class="btn btn-create-album" id="createAlbumBtn">
+                            <i class="fas fa-plus me-2"></i>Create an Album
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Albums List -->
+            <div class="albums-list">
+                <!-- Album Item 1 -->
+                <div class="album-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <div class="album-image">
+                                <div class="album-placeholder">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="location-text">Singanallur Branch</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="album-details">
+                                <h5 class="album-title">Wedding at the Grand Ballroom</h5>
+                                <p class="album-date">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    July 15, 2024
+                                </p>
+                                <p class="album-client">
+                                    <i class="fas fa-user me-2"></i>
+                                    Client - Sarah miller
+                                </p>
+                                <p class="album-photographer">
+                                    <i class="fas fa-camera me-2"></i>
+                                    Photographer - Emily Carter
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="album-actions">
+                                <button class="btn btn-view" data-album-id="1">
+                                    <i class="fas fa-eye me-1"></i>View
+                                </button>
+                                <button class="btn btn-delete" data-album-id="1" data-album-title="Wedding at the Grand Ballroom">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album Item 2 -->
+                <div class="album-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <div class="album-image">
+                                <div class="album-placeholder">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="location-text">Singanallur Branch</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="album-details">
+                                <h5 class="album-title">Wedding at the Grand Ballroom</h5>
+                                <p class="album-date">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    July 15, 2024
+                                </p>
+                                <p class="album-client">
+                                    <i class="fas fa-user me-2"></i>
+                                    Client - Sarah miller
+                                </p>
+                                <p class="album-photographer">
+                                    <i class="fas fa-camera me-2"></i>
+                                    Photographer - Emily Carter
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="album-actions">
+                                <button class="btn btn-view" data-album-id="2">
+                                    <i class="fas fa-eye me-1"></i>View
+                                </button>
+                                <button class="btn btn-delete" data-album-id="2" data-album-title="Wedding at the Grand Ballroom">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album Item 3 -->
+                <div class="album-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <div class="album-image">
+                                <div class="album-placeholder">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="location-text">Singanallur Branch</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="album-details">
+                                <h5 class="album-title">Wedding at the Grand Ballroom</h5>
+                                <p class="album-date">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    July 15, 2024
+                                </p>
+                                <p class="album-client">
+                                    <i class="fas fa-user me-2"></i>
+                                    Client - Sarah miller
+                                </p>
+                                <p class="album-photographer">
+                                    <i class="fas fa-camera me-2"></i>
+                                    Photographer - Emily Carter
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="album-actions">
+                                <button class="btn btn-view" data-album-id="3">
+                                    <i class="fas fa-eye me-1"></i>View
+                                </button>
+                                <button class="btn btn-delete" data-album-id="3" data-album-title="Wedding at the Grand Ballroom">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Album Item 4 -->
+                <div class="album-item">
+                    <div class="row align-items-center">
+                        <div class="col-md-3">
+                            <div class="album-image">
+                                <div class="album-placeholder">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span class="location-text">Singanallur Branch</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="album-details">
+                                <h5 class="album-title">Wedding at the Grand Ballroom</h5>
+                                <p class="album-date">
+                                    <i class="fas fa-calendar-alt me-2"></i>
+                                    July 15, 2024
+                                </p>
+                                <p class="album-client">
+                                    <i class="fas fa-user me-2"></i>
+                                    Client - Sarah miller
+                                </p>
+                                <p class="album-photographer">
+                                    <i class="fas fa-camera me-2"></i>
+                                    Photographer - Emily Carter
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="album-actions">
+                                <button class="btn btn-view" data-album-id="4">
+                                    <i class="fas fa-eye me-1"></i>View
+                                </button>
+                                <button class="btn btn-delete" data-album-id="4" data-album-title="Wedding at the Grand Ballroom">
+                                    <i class="fas fa-trash me-1"></i>Delete
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="deleteModalLabel">
+                        <i class="fas fa-exclamation-triangle text-warning me-2"></i>
+                        Confirm Delete
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete the album "<span id="albumToDelete"></span>"?</p>
+                    <div class="alert alert-warning">
+                        <i class="fas fa-info-circle me-2"></i>
+                        This action cannot be undone. All photos in this album will be permanently deleted.
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="fas fa-times me-1"></i>Cancel
+                    </button>
+                    <button type="button" class="btn btn-danger" id="confirmDelete">
+                        <i class="fas fa-trash me-1"></i>Delete Album
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            let albumToDeleteId = null;
+
+            // Create Album button
+            document.getElementById('createAlbumBtn').addEventListener('click', function() {
+                // Redirect to create album page or show modal
+                console.log('Create new album');
+                // You could redirect to a create album page or show a modal
+                alert('Create Album functionality would be implemented here');
+            });
+
+            // View Album buttons
+            document.querySelectorAll('.btn-view').forEach(button => {
+                button.addEventListener('click', function() {
+                    const albumId = this.getAttribute('data-album-id');
+                    console.log('View album:', albumId);
+                    // Redirect to album details page
+                    window.location.href = `album-details.html?id=${albumId}`;
+                });
+            });
+
+            // Delete Album buttons
+            document.querySelectorAll('.btn-delete').forEach(button => {
+                button.addEventListener('click', function() {
+                    albumToDeleteId = this.getAttribute('data-album-id');
+                    const albumTitle = this.getAttribute('data-album-title');
+                    
+                    // Update modal content
+                    document.getElementById('albumToDelete').textContent = albumTitle;
+                    
+                    // Show modal
+                    const deleteModal = new bootstrap.Modal(document.getElementById('deleteModal'));
+                    deleteModal.show();
+                });
+            });
+
+            // Confirm delete
+            document.getElementById('confirmDelete').addEventListener('click', function() {
+                if (albumToDeleteId) {
+                    // Find and remove the album item
+                    const albumItem = document.querySelector(`[data-album-id="${albumToDeleteId}"]`).closest('.album-item');
+                    
+                    // Add fade out animation
+                    albumItem.style.transition = 'opacity 0.3s ease';
+                    albumItem.style.opacity = '0';
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        albumItem.remove();
+                    }, 300);
+                    
+                    // Hide modal
+                    const deleteModal = bootstrap.Modal.getInstance(document.getElementById('deleteModal'));
+                    deleteModal.hide();
+                    
+                    // Reset
+                    albumToDeleteId = null;
+                    
+                    console.log('Album deleted:', albumToDeleteId);
+                    
+                    // Show success message (you could use a toast notification)
+                    alert('Album deleted successfully');
+                }
+            });
+
+            // Navigation link interactions
+            document.querySelectorAll('.photographer-nav-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        e.preventDefault();
+                        
+                        // Remove active class from all links
+                        document.querySelectorAll('.photographer-nav-link').forEach(l => l.classList.remove('active'));
+                        
+                        // Add active class to clicked link
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Album item hover effects
+            document.querySelectorAll('.album-item').forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

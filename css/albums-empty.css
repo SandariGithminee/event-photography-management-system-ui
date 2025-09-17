@@ -1,0 +1,372 @@
+/* Albums Empty State Page Styling using Bootstrap 5 and Custom Variables */
+
+.albums-page {
+    background-color: var(--secondary-light-gray);
+    min-height: 100vh;
+}
+
+/* Navigation Styling */
+.albums-navbar {
+    background-color: var(--secondary-white) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #e8ecef;
+}
+
+.brand-icon {
+    color: var(--primary-deep-blue);
+    font-size: 1.2rem;
+}
+
+.brand-text {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.albums-nav-link {
+    color: var(--text-secondary) !important;
+    font-weight: 500;
+    padding: 8px 16px !important;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    margin: 0 4px;
+}
+
+.albums-nav-link:hover {
+    color: var(--primary-deep-blue) !important;
+    background-color: rgba(10, 37, 64, 0.1);
+}
+
+.albums-nav-link.active {
+    color: var(--primary-deep-blue) !important;
+    background-color: rgba(10, 37, 64, 0.15);
+    font-weight: 600;
+}
+
+.book-event-btn {
+    background-color: var(--primary-deep-blue);
+    border-color: var(--primary-deep-blue);
+    border-radius: 6px;
+    padding: 8px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.book-event-btn:hover {
+    background-color: #07305d;
+    border-color: #07305d;
+    transform: translateY(-1px);
+}
+
+.logout-btn {
+    background-color: var(--secondary-charcoal-gray);
+    border-color: var(--secondary-charcoal-gray);
+    border-radius: 6px;
+    padding: 8px 20px;
+    color: var(--secondary-white);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    color: var(--secondary-white);
+}
+
+/* Page Header */
+.albums-header {
+    text-align: left;
+    margin-bottom: 3rem;
+}
+
+.page-title {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+/* Empty State Container */
+.empty-state-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+    padding: 2rem 0;
+}
+
+.empty-state-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+/* Photo Album Illustration */
+.empty-state-image {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.photo-album-illustration {
+    position: relative;
+    perspective: 800px;
+}
+
+.album-cover {
+    position: relative;
+    width: 280px;
+    height: 200px;
+    background: linear-gradient(135deg, #E8D5C4, #D4C4A8);
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transform-style: preserve-3d;
+    transition: transform 2s ease;
+}
+
+/* Album Pages */
+.album-pages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.album-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-white);
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-1 {
+    transform: translateZ(-2px) translateX(-2px);
+    opacity: 0.7;
+}
+
+.page-2 {
+    transform: translateZ(-4px) translateX(-4px);
+    opacity: 0.5;
+}
+
+.page-3 {
+    transform: translateZ(-6px) translateX(-6px);
+    opacity: 0.3;
+}
+
+/* Photo Placeholder */
+.photo-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120px;
+    height: 80px;
+    background: linear-gradient(135deg, #A8B8A8, #8FA68F);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.photo-placeholder i {
+    font-size: 2rem;
+    color: var(--secondary-white);
+    opacity: 0.8;
+}
+
+/* Empty State Text */
+.empty-state-text {
+    color: var(--text-secondary);
+}
+
+.empty-title {
+    color: var(--text-primary);
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.empty-description {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Empty State Actions */
+.empty-state-actions {
+    margin-top: 2rem;
+}
+
+.btn-view-events {
+    background-color: var(--secondary-charcoal-gray);
+    border-color: var(--secondary-charcoal-gray);
+    color: var(--secondary-white);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-view-events:hover {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+    color: var(--secondary-white);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+    .page-title {
+        font-size: 2rem;
+    }
+    
+    .albums-header {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    .albums-nav-link {
+        margin: 4px 0;
+    }
+    
+    .book-event-btn,
+    .logout-btn {
+        margin: 4px 0 !important;
+        width: 100%;
+    }
+    
+    .album-cover {
+        width: 240px;
+        height: 170px;
+    }
+    
+    .photo-placeholder {
+        width: 100px;
+        height: 70px;
+    }
+    
+    .photo-placeholder i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .empty-state-container {
+        min-height: 50vh;
+        padding: 1rem 0;
+    }
+    
+    .empty-state-image {
+        margin-bottom: 2rem;
+    }
+    
+    .album-cover {
+        width: 200px;
+        height: 140px;
+    }
+    
+    .photo-placeholder {
+        width: 80px;
+        height: 60px;
+    }
+    
+    .photo-placeholder i {
+        font-size: 1.2rem;
+    }
+    
+    .empty-title {
+        font-size: 1.5rem;
+    }
+    
+    .empty-description {
+        font-size: 0.95rem;
+    }
+    
+    .page-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .brand-text {
+        font-size: 1.2rem;
+    }
+    
+    .empty-state-content {
+        padding: 0 1rem;
+    }
+    
+    .album-cover {
+        width: 180px;
+        height: 125px;
+    }
+}
+
+/* Animation Effects */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+.album-cover:hover {
+    animation: float 2s ease-in-out;
+}
+
+/* Focus States for Accessibility */
+.btn-view-events:focus {
+    outline: 2px solid var(--primary-deep-blue);
+    outline-offset: 2px;
+}
+
+/* Dark Mode Support (Future Enhancement) */
+@media (prefers-color-scheme: dark) {
+    .albums-page {
+        background-color: #1a1a1a;
+    }
+    
+    .album-cover {
+        background: linear-gradient(135deg, #3a3a3a, #2a2a2a);
+    }
+    
+    .photo-placeholder {
+        background: linear-gradient(135deg, #4a4a4a, #3a3a3a);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .albums-navbar,
+    .empty-state-actions {
+        display: none;
+    }
+    
+    .albums-page {
+        background-color: white;
+    }
+    
+    .empty-state-container {
+        min-height: auto;
+    }
+}
